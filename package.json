@@ -4,10 +4,13 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "postinstall": "react-scripts build",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "install": "cd server && npm i && cd ../client && npm i"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
-    "apollo-server-express": "^3.11.1"
+    "apollo-server-express": "^3.11.1",
+    "react-scripts": "^5.0.1"
   }
 }
