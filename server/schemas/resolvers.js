@@ -6,7 +6,7 @@ const resolvers = {
   Query: {
     me: async(parents, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user_id}).select('-__v -password');
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
         return userData;
       }
       throw new AuthenticationError("You need to be logged in!");
